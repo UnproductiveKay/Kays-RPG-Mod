@@ -1,6 +1,8 @@
 package kay.rpgcombat.proxy;
 
 import kay.rpgcombat.RPGCombat;
+import kay.rpgcombat.input.InputHandler;
+import kay.rpgcombat.input.KeyBindings;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoaderRegistry;
 import net.minecraftforge.client.model.obj.OBJLoader;
@@ -30,8 +32,8 @@ public class ClientProxy extends CommonProxy {
         super.init(e);
 
         // Initialize our input handler so we can listen to keys
-        //MinecraftForge.EVENT_BUS.register(new InputHandler());
-        //KeyBindings.init();
+        MinecraftForge.EVENT_BUS.register(new InputHandler());
+        KeyBindings.init();
     }
 
     @Override
